@@ -2,6 +2,7 @@ package product;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class ProductManagerTest {
@@ -14,14 +15,14 @@ public class ProductManagerTest {
     Product item3 = new Smartphone(3, "1: Iphone", 65_000, "Apple");
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         manager.add(item1);
         manager.add(item2);
         manager.add(item3);
     }
 
     @Test
-    public void ShouldViewAll(){
+    public void ShouldViewAll() {
         Product[] actual = manager.getItems();
         Product[] expected = {item1, item2, item3};
 
@@ -29,7 +30,7 @@ public class ProductManagerTest {
     }
 
     @Test
-    public void ShouldDelete(){
+    public void ShouldDelete() {
         manager.del(2);
 
         Product[] actual = manager.getItems();
@@ -38,20 +39,20 @@ public class ProductManagerTest {
         assertArrayEquals(expected, actual);
     }
 
-@Test
-    public void ShouldFindAll(){
-    Product[] actual = manager.searchBy("1");
-    Product[] expected = {item1, item2, item3};
+    @Test
+    public void ShouldFindAll() {
+        Product[] actual = manager.searchBy("1");
+        Product[] expected = {item1, item2, item3};
 
-    assertArrayEquals(expected, actual);
-}
+        assertArrayEquals(expected, actual);
+    }
 
-@Test
-    public void ShouldFindNothing(){
-    Product[] actual = manager.searchBy("k");
-    Product[] expected = {};
+    @Test
+    public void ShouldFindNothing() {
+        Product[] actual = manager.searchBy("k");
+        Product[] expected = {};
 
-    assertArrayEquals(expected, actual);
-}
+        assertArrayEquals(expected, actual);
+    }
 
 }
