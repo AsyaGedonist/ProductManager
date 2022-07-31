@@ -34,4 +34,8 @@ public class Product {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    public boolean matches(Product product, String search) {
+        return product.getName().contains(search);
+    }
 }

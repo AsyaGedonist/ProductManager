@@ -16,4 +16,11 @@ public class Book extends Product {
         this.author = author;
     }
 
+    public boolean matches(Product product, String search) {
+        if (super.matches(product, search)){
+            return true;
+        }
+        return getAuthor().contains(search);
+    }
+
 }
