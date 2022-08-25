@@ -28,7 +28,4 @@ public class ProductRepository {
         return items;
     }
 
-    public boolean matches(Product product, String search) {
-        return product.matches(product, search);
-    }
 }
